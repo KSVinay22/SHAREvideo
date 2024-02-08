@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id);
 
+	//listen to apporpriate methods
+
 	socket.on("disconnect", () => {
 		socket.broadcast.emit("callEnded")
 	});
